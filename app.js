@@ -25,10 +25,10 @@ const store = {
       correctAnswer: 'Alexander The Great'
     },
     {
-      question: "When Diogenese's town was attacked and everyone started paniking, Diogenese:",
+      question: "When Diogenese's town was attacked and everyone started panicking, Diogenese:",
       answers: [
         'Rolled a rock up and down a hill',
-        'Also started paniking',
+        'Also started panicking',
         'Packed his things and ran',
         'Wet himself'
       ],
@@ -88,7 +88,7 @@ function generateQuestion(number) {
         <input type="radio" id="answer1" name="a" value="${question.answers[0]}" required>
         <label for="answer1">${question.answers[0]}</label><br>
         <input type="radio" id="answer2" name="a" value="${question.answers[1]}" required>
-        <label for="answer2">${question.answers[1]}'</label><br>
+        <label for="answer2">${question.answers[1]}</label><br>
         <input type="radio" id="answer3" name="a" value="${question.answers[2]}" required>
         <label for="anwer3">${question.answers[2]}</label><br>
         <input type="radio" id="answer4" name="a" value="${question.answers[3]}" required>
@@ -102,9 +102,9 @@ function generateQuestion(number) {
 function correct() {
   finalScore += 1
   return `
-    <div class="mainPage">
+    <div class="correct">
       <h2>Congrats You Got It Right!</h2>
-      <h5>the correct answer is ${store.questions[store.questionNumber].correctAnswer}</h5>
+      <h5>the correct answer is "${store.questions[store.questionNumber].correctAnswer}."</h5>
       <button class="button" id="next">Next Question</button>
     </div
   `
@@ -112,9 +112,9 @@ function correct() {
 
 function incorrect() {
   return `
-    <div class="mainPage">
+    <div class="incorrect">
       <h2>Oof Better Luck Next Time Bud :(</h2>
-      <h5>the correct answer is ${store.questions[store.questionNumber].correctAnswer}</h5>
+      <h5>the correct answer is "${store.questions[store.questionNumber].correctAnswer}."</h5>
       <button class="button" id="next">Next Question</button>
     </div
   `
