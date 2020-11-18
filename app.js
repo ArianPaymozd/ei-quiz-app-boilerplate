@@ -105,7 +105,7 @@ function correct() {
     <div class="mainPage">
       <h2>Congrats You Got It Right!</h2>
       <h5>the correct answer is ${store.questions[store.questionNumber].correctAnswer}</h5>
-      <button id="next">Next Question</button>
+      <button class="button" id="next">Next Question</button>
     </div
   `
 }
@@ -115,7 +115,7 @@ function incorrect() {
     <div class="mainPage">
       <h2>Oof Better Luck Next Time Bud :(</h2>
       <h5>the correct answer is ${store.questions[store.questionNumber].correctAnswer}</h5>
-      <button id="next">Next Question</button>
+      <button class="button" id="next">Next Question</button>
     </div
   `
 }
@@ -126,7 +126,7 @@ function renderFinalPage() {
     <h2>Congrats you made it through the quiz!</h2>
     <h5>You got ${finalScore}/${store.questions.length} questions correct!</h5>
     <form id="submit">
-      <input type="submit" value="Restart test">
+      <input class="button" type="submit" value="Restart test">
     </form>
   </div>
   `
