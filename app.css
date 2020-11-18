@@ -1,8 +1,45 @@
 /* Your styles should be mobile-first and responsive */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #3cc4e6;
+  color: #545454;
+  justify-content: center;
+  height: fit-content;
+}
 
-/** 
-  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
-  *
-  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
-  *
-*/
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4vw;
+}
+
+main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.mainPage {
+  padding: 20px;
+  margin: 30px;
+  text-align: center;
+  border-radius: 25px;
+  border: 5px solid #545454;
+}
+
+.mainPage h2{
+  display: flex;
+  flex-direction: column;
+  font-size: 3.7vw;
+}
