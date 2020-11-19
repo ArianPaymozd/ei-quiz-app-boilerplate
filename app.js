@@ -142,6 +142,10 @@ function status() {
   $('.status').html(`Question Number: ${(store.questionNumber + 1)}/${store.questions.length}<br> Your Score Is: ${finalScore}/${store.questions.length}`)
 }
 
+function statusSansQuestion() {
+  $('.status').html(``)
+}
+
 /********** RENDER FUNCTION(S) **********/
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
@@ -205,6 +209,7 @@ function getQuestion() {
   $('main').on('click', '#next', function(event){
     let number = store.questionNumber++
     if (store.questionNumber == store.questions.length) {
+      statusSansQuestion()
       finalCheck()
       
     }
