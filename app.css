@@ -1,11 +1,8 @@
 /* Your styles should be mobile-first and responsive */
-body {
-  display: flex;
-  flex-direction: column;
+html body {
   background-color: #3cc4e6;
   color: #545454;
-  justify-content: center;
-  height: fit-content;
+  vertical-align: middle;
 }
 
 header {
@@ -22,10 +19,14 @@ header h4 {
 
 main {
   text-align: center;
+}
+
+.answers {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  list-style: none;
+  align-items: flex-start;
+  padding-left: 20px;
 }
 
 form {
@@ -34,7 +35,16 @@ form {
   justify-items: center;
 }
 
+.option {
+  vertical-align: middle;
+}
+
+#a #b #c #d {
+  align-items: center;
+}
+
 label {
+  vertical-align: middle;
   font-size: 2.5vw;
 }
 

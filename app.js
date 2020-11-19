@@ -9,10 +9,10 @@ const store = {
       answers: [
         'Gave the boy a cup',
         'Walked away like a normal person',
-        'Threw away his wooden bowl because he thought it made him too materialistic',
+        'Threw away his wooden bowl and used his hands too',
         'Also drank some water'
       ],
-      correctAnswer: 'Threw away his wooden bowl because he thought it made him too materialistic'
+      correctAnswer: 'Threw away his wooden bowl and used his hands too'
     },
     {
       question: 'What great leader said he wanted to be Diogenese?',
@@ -83,17 +83,25 @@ function generateQuestion(number) {
   let question = store.questions[store.questionNumber]
   return `
     <div class="mainPage">
-      <form id="question">
       <h2>${question.question}</h2>
-        <input type="radio" id="answer1" name="a" value="${question.answers[0]}" required>
-        <label for="answer1">${question.answers[0]}</label><br>
-        <input type="radio" id="answer2" name="a" value="${question.answers[1]}" required>
-        <label for="answer2">${question.answers[1]}</label><br>
-        <input type="radio" id="answer3" name="a" value="${question.answers[2]}" required>
-        <label for="anwer3">${question.answers[2]}</label><br>
-        <input type="radio" id="answer4" name="a" value="${question.answers[3]}" required>
-        <label for="anwer4">${question.answers[3]}</label><br>
-      </form>
+        <ul class="answers">
+          <li>
+            <input type="radio" id="answer1" name="a" value="${question.answers[0]}" required>
+            <label for="answer1">${question.answers[0]}</label><br>
+          </li>
+          <li>
+            <input type="radio" id="answer2" name="a" value="${question.answers[1]}" required>
+            <label for="answer2">${question.answers[1]}</label><br>
+          </li>
+          <li>
+            <input type="radio" id="answer3" name="a" value="${question.answers[2]}" required>
+            <label for="answer3">${question.answers[2]}</label><br>
+          </li>
+          <li>
+            <input type="radio" id="answer4" name="a" value="${question.answers[3]}" required>
+            <label for="answer4">${question.answers[3]}</label><br>
+          </li>
+        </ul>
       <button id="check">Check Answer</button>
     </div>
     `
@@ -104,7 +112,7 @@ function correct() {
   return `
     <div class="correct">
       <h2>Congrats You Got It Right!</h2>
-      <h5>the correct answer is "${store.questions[store.questionNumber].correctAnswer}."</h5>
+      <h5>The correct answer is "${store.questions[store.questionNumber].correctAnswer}."</h5>
       <button class="button" id="next">Next Question</button>
     </div
   `
@@ -114,7 +122,7 @@ function incorrect() {
   return `
     <div class="incorrect">
       <h2>Oof Better Luck Next Time Bud :(</h2>
-      <h5>the correct answer is "${store.questions[store.questionNumber].correctAnswer}."</h5>
+      <h5>The correct answer is "${store.questions[store.questionNumber].correctAnswer}."</h5>
       <button class="button" id="next">Next Question</button>
     </div
   `
