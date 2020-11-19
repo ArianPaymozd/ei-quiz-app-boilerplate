@@ -75,9 +75,7 @@ function generateMainPage() {
     `
 }
 
-function status() {
-  $('.status').html(`Question Number: ${(store.questionNumber + 1)}/${store.questions.length}<br> Your Score Is: ${finalScore}/${store.questions.length}`)
-}
+
 
 function generateQuestion(number) {
   let question = store.questions[store.questionNumber]
@@ -140,6 +138,10 @@ function renderFinalPage() {
   `
 }
 
+function status() {
+  $('.status').html(`Question Number: ${(store.questionNumber + 1)}/${store.questions.length}<br> Your Score Is: ${finalScore}/${store.questions.length}`)
+}
+
 /********** RENDER FUNCTION(S) **********/
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
@@ -152,7 +154,6 @@ function checkAnswer() {
     return
   }
   if (store.questions[store.questionNumber].correctAnswer == input) {
-    store.score += 1
     html = correct()
   } else {
     html = incorrect()
@@ -205,6 +206,7 @@ function getQuestion() {
     let number = store.questionNumber++
     if (store.questionNumber == store.questions.length) {
       finalCheck()
+      
     }
     else {
       generateQuestion(number)
