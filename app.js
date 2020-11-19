@@ -69,7 +69,7 @@ function generateMainPage() {
   return `
     <div class="mainPage">
       <h2>Diogenese The Dog</h2>
-      <p>This is my quiz on the most insane philisopher who ever lived. This is all true</p>
+      <h4>This is my quiz on the most insane philisopher who ever lived. This is all true</h4>
       <button id="startQuiz">Start Quiz</button>
     </div>
     `
