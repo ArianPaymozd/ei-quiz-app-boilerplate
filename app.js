@@ -35,7 +35,7 @@ const store = {
       correctAnswer: 'Rolled a rock up and down a hill'
     },
     {
-      question: 'What famous philosopher did Diogenese completely embarrase in a debate?',
+      question: 'What famous philosopher did Diogenese completely embarrass in a debate?',
       answers: [
         'Plato',
         '2pac',
@@ -148,7 +148,7 @@ function checkAnswer() {
   let html = ""
   let input = $("input[name = a]:checked").val()
   if (!input) {
-    $('main').append(`<h4>Plaease select an answer</h4>`)
+    $('main').append(`<h4>Please select an answer</h4>`)
     return
   }
   if (store.questions[store.questionNumber].correctAnswer == input) {
@@ -157,9 +157,11 @@ function checkAnswer() {
   } else {
     html = incorrect()
   }
-  if (store.questionNumber == (store.questions.length - 1)) {
-    html = renderFinalPage()
-  }
+  $('main').html(html)
+}
+
+function finalCheck() {
+  html = renderFinalPage()
   $('main').html(html)
 }
 
@@ -179,7 +181,6 @@ function render() {
       html = generateQuestion()
     }
   $('main').html(html)
-  console.log(store.score)
 }
 
 /********** EVENT HANDLER FUNCTIONS **********/
@@ -202,9 +203,14 @@ function handleRestartQuiz() {
 function getQuestion() {
   $('main').on('click', '#next', function(event){
     let number = store.questionNumber++
-    generateQuestion(number)
-    status()
-    render()
+    if (store.questionNumber == store.questions.length) {
+      finalCheck()
+    }
+    else {
+      generateQuestion(number)
+      status()
+      render()
+    }
   })
   $('main').on('click', '#check', function(event){
     checkAnswer()

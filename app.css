@@ -45,7 +45,8 @@ form {
 
 label {
   vertical-align: middle;
-  font-size: 2.5vw;
+  font-size: 2.4vw;
+  padding-left: 7px;
 }
 
 .mainPage {
